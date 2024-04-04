@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <div>Counter value:</div>
+        <div id="counter-view-value">0</div>
+        <button id="increment-button">Add</button>
+        <button id="decrement-button">Remove</button>
+      </div>
+    </div>
+    <script type="text/javascript">
+      console.debug("Running javascript script");
+      // in memory state stored in JS
+      let value = 0;
+
+      // functions to manipulate counter value
+      function increment() {
+        console.debug("Executing increment function...");
+        // increment js value
+        value++;
+        
+        const counterViewValue = document.getElementById("counter-view-value");
+
+        // do DOM manipulation to display current value stored by JS
+        counterViewValue.innerText = value;
+      }
+
+      function decrement() {
+        console.debug("Executing decrement function...");
+        value--;
+
+
+        const counterViewValue = document.getElementById("counter-view-value");
+
+        // do DOM manipulation to display current value stored by JS
+        counterViewValue.innerText = value;
+      }
+
+      // add event handlers to buttons
+      const incrementButton = document.getElementById("increment-button");
+      incrementButton.addEventListener("click", increment);
+
+      const decrementButton = document.getElementById("decrement-button");
+      decrementButton.addEventListener("click", decrement);
+    </script>
+  </body>
+</html>
