@@ -1,15 +1,16 @@
 import { createSignal } from "solid-js";
-import "./App.css";
 
-function App() {
-  console.debug("App component render");
-  const [count, setCount] = createSignal(0);
-  function increment() {
-    setCount(count() + 1);
-  }
-  function decrement() {
-    setCount(count() - 1);
-  }
+const [count, setCount] = createSignal(0);
+
+function increment() {
+  setCount(count() + 1);
+}
+
+function decrement() {
+  setCount(count() - 1);
+}
+
+function Counter() {
   return (
     <div>
       <div>
@@ -26,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default Counter;

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function App() {
-  console.debug("App component render");
   const [count, setCount] = useState(0);
   function increment() {
     setCount(count + 1);
@@ -9,6 +8,7 @@ function App() {
   function decrement() {
     setCount(count - 1);
   }
+
   return (
     <div>
       <div>
@@ -25,4 +25,18 @@ function App() {
   );
 }
 
-export default App;
+const AppWrapper = () => {
+  console.log(
+    <div>
+      <h1>Hello!</h1>
+    </div>
+  );
+
+  return (
+    <div>
+      <App />
+    </div>
+  );
+};
+
+export default AppWrapper;
